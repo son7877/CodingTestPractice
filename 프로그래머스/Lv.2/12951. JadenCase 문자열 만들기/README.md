@@ -55,7 +55,7 @@
       </table>
 <hr>
 
-<p>※ 공지 - 2022년 1월 14일 제한 조건과 테스트 케이스가 추가되었습니다.</p>
+<p>※ 테스트 케이스 중 마지막 문자열이 공백인 경우 생각하기</p>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
