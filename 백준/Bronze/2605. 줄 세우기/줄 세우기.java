@@ -36,7 +36,7 @@ public class Main {
 		
 		
 		for(int i=0;i<inputArr.length;i++) {
-			if(arr[i]==0) { //0을 뽑을 때
+			if(inputArr[i]==0) { //0을 뽑을 때
 				arr2.add(arr[i]);
 			}else {
 				arr2.add(arr2.size()-inputArr[i],  arr[i]);
