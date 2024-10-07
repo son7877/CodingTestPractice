@@ -19,7 +19,7 @@ var campus = (0..<N).map{ _ in
 
 func solution() -> Any {
     var answer = 0
-    var failure = "TT"
+    let failure = "TT"
     
     // 상하 좌우 이동
     let dx = [-1, 1, 0, 0]
