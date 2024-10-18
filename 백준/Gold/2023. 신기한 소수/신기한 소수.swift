@@ -14,7 +14,7 @@ func isPrime(_ num: Int) -> Bool { // 소수 판별 함수
         return false
     }
     
-    for i in 2..<num {
+    for i in 2..<Int(sqrt(Double(num))) + 1 {
         if num % i == 0 {
             return false
         }
@@ -46,3 +46,5 @@ func solution() { // 2,3,5,7로 시작하는 소수 각각 찾기
 }
 
 solution()
+
+
