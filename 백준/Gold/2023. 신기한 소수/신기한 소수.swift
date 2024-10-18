@@ -14,7 +14,7 @@ func isPrime(_ num: Int) -> Bool { // 소수 판별 함수
         return false
     }
     
-    for i in 2..<Int(sqrt(Double(num))) + 1 {
+    for i in 2..<Int(sqrt(Double(num))) + 1 { // 제곱근까지만 판별 -> 시간  616ms -> 8ms 로 단축
         if num % i == 0 {
             return false
         }
