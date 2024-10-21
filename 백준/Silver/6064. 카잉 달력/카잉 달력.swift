@@ -19,6 +19,35 @@ for _ in 1...T {
     solution(M, N, x, y)
 }
 
+// func solution(_ M: Int, _ N: Int, _ x: Int, _ y: Int) {
+//     var count = 0
+//     var i = 0
+//     var j = 0
+//     while true {
+//         if i < M && j < N {
+//             i+=1
+//             j+=1
+//             count+=1
+//         } else if i == M {
+//             i=1
+//             j+=1
+//             count+=1
+//         } else if j == N {
+//             j=1
+//             i+=1
+//             count+=1
+//         } else {
+//             print(-1)
+//             break
+//         }
+            
+//         if i == x && j == y {
+//             print(count)
+//             break
+//             }
+//         } // => 시간 초과
+// }
+
 func solution(_ M: Int, _ N: Int, _ x: Int, _ y: Int) {
     let x = x
     let y = y
