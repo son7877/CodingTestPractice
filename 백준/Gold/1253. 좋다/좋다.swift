@@ -11,7 +11,7 @@ let N = Int(readLine()!)!
 let N_arr = readLine()!
     .split(separator: " ")
     .map{Int($0)!}
-    .sorted()
+    .sorted() // 1차 실패 원인 -> 투 포인터는 정렬된 배열에서!
 
 func solution() {
     var count = 0
