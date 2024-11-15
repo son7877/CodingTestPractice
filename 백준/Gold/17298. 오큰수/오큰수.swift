@@ -27,10 +27,6 @@ func solution() {
         stack.append(i)
     }
     
-    while !stack.isEmpty {
-        result[stack.remove(at: stack.count-1)] = -1
-    }
-    
     print(result.map{String($0)}.joined(separator: " "))
 }
 
