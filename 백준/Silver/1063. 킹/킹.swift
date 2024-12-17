@@ -11,7 +11,7 @@ let input = readLine()!
     .split(separator: " ")
     .map { String($0) }
 
-guard let N = Int(input[2]) else { exit(1) }
+let N = Int(input[2])!
 
 let xLocation = ["A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8]
 let reverseXLocation = [1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7: "G", 8: "H"] // 행을 역으로 찾기 위해 사용
