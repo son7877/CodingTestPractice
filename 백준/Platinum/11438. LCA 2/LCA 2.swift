@@ -27,9 +27,11 @@ func setTree() {
     var queue = [1]
     visited[1] = true
     depth[1] = 0
+    var front = 0
     
-    while !queue.isEmpty {
-        let current = queue.removeFirst()
+    while front < queue.count {
+        let current = queue[front]
+        front += 1
         
         for next in tree[current] {
             if !visited[next] {
