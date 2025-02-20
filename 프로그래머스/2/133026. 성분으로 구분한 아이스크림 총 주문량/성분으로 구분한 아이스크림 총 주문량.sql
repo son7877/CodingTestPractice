@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+select I.INGREDIENT_TYPE, sum(F.TOTAL_ORDER) as TOTAL_ORDER
+from FIRST_HALF F
+inner join ICECREAM_INFO I on F.FLAVOR = I.FLAVOR
+group by INGREDIENT_TYPE
+order by TOTAL_ORDER
