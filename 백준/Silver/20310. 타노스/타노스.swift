@@ -11,36 +11,35 @@ let input = readLine()!
 
 func solution(_ input: String) -> String {
     var answer = ""
-    var stack = [Character]()
+    let totalZeroCount = input.filter { $0 == "0" }.count
+    let totalOneCount = input.filter { $0 == "1" }.count
     
-    for i in input {
-        stack.append(i)
-    }
+    var zeroToRemove = totalZeroCount / 2
+    var oneToRemove = totalOneCount / 2
     
-    stack.sort()
-    var count = 1
+    // 1은 앞에서부터 지우고
+    // 0은 뒤에서부터 지운다.
     
-    for i in 0..<stack.count-1 {
-        if stack[i] != stack[i+1] {
-            break
+    var charArr = [Character](input)
+    
+    for char in input {
+        if char == "1" && oneToRemove > 0 {
+            oneToRemove -= 1
+        } else {
+            answer.append(char)
         }
-        count += 1
     }
     
-    let oneCount = stack.count - count
-    
-    let tanosZero = count/2
-    let tanosOne = oneCount/2
-    
-    for _ in 0..<tanosZero {
-        answer.append("0")
+    var finalResult = [Character]()
+    for char in answer.reversed() {
+        if char == "0" && zeroToRemove > 0 {
+            zeroToRemove -= 1
+        } else {
+            finalResult.append(char)
+        }
     }
     
-    for _ in 0..<tanosOne {
-        answer.append("1")
-    }
-    
-    return answer
+    return String(finalResult.reversed())
 }
 
 print(solution(input))
