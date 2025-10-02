@@ -91,8 +91,8 @@ def make_readme():
     programmers_section = make_programmers_list()
 
     # 템플릿의 위치 지정자를 실제 목록으로 교체
-    readme = template.replace("", baekjoon_section)
-    readme = readme.replace("", programmers_section)
+    readme = template.replace("{{BAEKJOON}}", baekjoon_section)
+    readme = readme.replace("{{PROGRAMMERS}}", programmers_section)
 
     with open("README.md", 'w', encoding='utf-8') as f:
         f.write(readme)
