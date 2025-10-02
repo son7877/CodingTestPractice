@@ -1,7 +1,8 @@
 import os
 from urllib import parse
 
-HEADER="""#
+HEADER="""
+#
 # 백준, 프로그래머스 문제 풀이 목록
 """
 
@@ -31,14 +32,13 @@ def main():
     
     if directory == '.':
       continue
+    
+    # 백준과 프로그래머스 폴더에 있는 풀이만 처리
+    if directory not in ["백준", "프로그래머스"]:
+      continue
       
     if directory not in directories:
-      if directory in ["백준", "프로그래머스"]:
-        content += "## 📚 {}\n".format(directory)
-      else:
-        content += "### 🚀 {}\n".format(directory)
-        content += "| 문제번호 | 링크 |\n"
-        content += "| ----- | ----- |\n"
+      content += "## 📚 {}\n".format(directory)
       directories.append(directory)
       
     for file in files:
