@@ -1,24 +1,31 @@
 import Foundation
 
-func solution(_ n:Int, _ times:[Int]) -> Int {
-    var timesSorted = times.sorted()
-    var answer = 0
-    var left = 1
-    var right = timesSorted.last! * n
+func solution(_ n:Int, _ times:[Int]) -> Int64 {
+    let n64 = Int64(n)
     
-    while left <= right {
-        let mid = (left + right) / 2
-        var sum = 0
+    var start: Int64 = 1
+    var end: Int64 = Int64(times.max()!) * n64
+    var answer: Int64 = end 
+    
+    while start <= end {
+        let mid: Int64 = (start + end) / 2
         
-        for i in 0..<timesSorted.count {
-            sum += mid / times[i]
+        var total: Int64 = 0 
+        for time in times {
+            let time64 = Int64(time)
+            
+            total += mid / time64
+            
+            if total >= n64 {
+                break
+            }
         }
         
-        if sum >= n {
+        if total >= n64 {
             answer = mid
-            right = mid - 1
+            end = mid - 1 
         } else {
-            left = mid + 1
+            start = mid + 1  
         }
     }
     
