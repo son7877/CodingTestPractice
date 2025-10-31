@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 class Solution
@@ -40,11 +41,12 @@ class Solution
             map.get(from).add(to);
 
         }
-        
+
         Set<Integer> visited = new HashSet<>();
-        return dfs(0, 99, map, visited) ? 1 : 0;
+        
+        return bfs(0, 99, map, visited) ? 1 : 0;
     }
-    
+
     private static boolean dfs(
             int start, int end, HashMap<Integer, List<Integer>> map, Set<Integer> visited) {
         if (start == end) {
@@ -58,13 +60,42 @@ class Solution
         }
 
         for (int next : map.get(start)) {
-            if (!visited.contains(next)) { // 
+            if (!visited.contains(next)) { //
                 if (dfs(next, end, map, visited)) {
                     return true;
                 }
             }
         }
 
+        return false;
+    }
+    
+    private static boolean bfs(
+            int start, int end, HashMap<Integer, List<Integer>> map, Set<Integer> visited
+    ) {
+        Queue<Integer> queue = new LinkedList<>();
+        
+        queue.add(start);
+        
+        while(!queue.isEmpty()) {
+            int current = queue.poll();
+
+            if (current == end) {
+                return true;
+            }
+            
+            if (!map.containsKey(current)) {
+                continue;
+            }
+            
+            for (int next : map.get(current)) {
+                if (!visited.contains(next)) {
+                    queue.add(next);
+                    visited.add(next);
+                }
+            }
+        }
+        
         return false;
     }
 }
